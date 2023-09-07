@@ -1,15 +1,14 @@
-﻿Musica musica1 = new Musica();
-musica1.nome = "Roxane";
-musica1.artista = "The Police";
-musica1.duracao = 273;
-musica1.disponivel = true;
+﻿Banda banda = new Banda("Queen");
+Album albumQueen = new Album("A night at the opera");
 
-musica1.ExibirFichaTecnica();
+Musica musica1 = new Musica(banda, "Love of my life") { Duracao = 213, Disponivel = true };
+Musica musica2 = new Musica(banda, "Bohemian Rhapsody") { Duracao = 354, Disponivel = false };
 
-Musica musica2 = new Musica();
-musica2.nome = "Vertigo";
-musica2.artista = "U2";
-musica2.duracao = 367;
-musica2.disponivel = false;
+albumQueen.AdicionarMusica(musica1);
+albumQueen.AdicionarMusica(musica2);
 
-musica2.ExibirFichaTecnica();
+albumQueen.ExibirMusicasDoAlbum();
+
+
+banda.AdicionarAlbum(albumQueen);
+banda.ExibirDiscografia();
